@@ -3,7 +3,7 @@
 # CNN Classification Task with Cat-vs-Dog dataset
 
 ## Task Description
-In this task, you will build a Convolutional Neural Network (CNN) for image classification. The goal is to classify images into two categories: **dogs** and **cats**. You will:
+In this task,  will build a Convolutional Neural Network (CNN) for image classification. The goal is to classify images into two categories: **dogs** and **cats**. You will:
 
 1. Preprocess and explore the dataset.
 2. Build and train a CNN classification model.
@@ -22,11 +22,10 @@ The dataset used for this task is **Dogs vs. Cats**:
 - **Labels**: 0 for cat, 1 for dog.
 
 
-## Requirements
 
 1. **Model Requirements**:
    - Build a CNN model.
-   - Include at least:
+   - Include :
      - Input layer for image data.
      - Multiple convolutional layers with appropriate activation functions.
      - Pooling layers (e.g., MaxPooling).
@@ -40,17 +39,93 @@ The dataset used for this task is **Dogs vs. Cats**:
      - Model training and validation accuracy.
      - Confusion matrix.
 
-3. **Documentation**:
-   - Clearly document:
-     - The architecture of the CNN model.
-     - Evaluation results.
+
 
 ## Findings
-Document your results and observations here:
-- **Accuracy**: [Enter final accuracy here]
-- **Loss**: [Enter final loss here]
-- **Observations**:
-   - [E.g., CNN with 3 layers achieved better accuracy compared to 2 layers]
-   - [Learning rate of 0.001 provided optimal convergence]
 
-Add more details as needed to describe your experiments and outcomes.
+---
+
+## Model Architecture
+
+The CNN model includes:
+
+- **Input Layer:** (128 × 128 × 3)
+- **Conv2D (32 filters) + ReLU**
+- **MaxPooling**
+- **Conv2D (64 filters) + ReLU**
+- **MaxPooling**
+- **Conv2D (128 filters) + ReLU**
+- **MaxPooling**
+- **Flatten**
+- **Dense (256) + ReLU**
+- **Dropout (0.5)**
+- **Output Layer (Sigmoid)**
+
+Loss Function: Binary Cross-Entropy
+
+
+Optimizer: Adam (learning rate = 0.001)
+
+
+---
+
+## Evaluation Metrics
+
+The model was evaluated using:
+
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion Matrix
+
+---
+
+## Results
+- Accuracy : 0.8639
+- Precision : 0.9084
+- Recall : 0.8095
+- F1-Score : 0.8561
+
+
+
+
+### Classification Report:
+
+          precision    recall  f1-score   support
+
+Cat 0.83  0.92  0.87  2499 
+Dog 0.91  0.81  0.86  2499
+
+accuracy 0.86  4998
+
+
+
+---
+
+
+
+- The CNN achieved **86% accuracy** on the validation dataset.
+- The model performs slightly better at detecting **cats** than **dogs**.
+- **Dropout (0.5)** helped reduce overfitting.
+- The learning rate **0.001** provided stable training.
+- A **3-layer CNN architecture** was sufficient to achieve good classification performance.
+
+---
+
+## Visualizations
+
+
+- Training vs Validation **Accuracy Curve**
+- Training vs Validation **Loss Curve**
+- **Confusion Matrix**
+
+These visualizations help analyze model performance during training.
+
+## References
+
+The following Kaggle notebooks for guidance on loading
+1. https://www.kaggle.com/code/uysimty/keras-cnn-dog-or-cat-classification
+2. https://www.kaggle.com/code/prashant111/cnn-image-classification-cats-vs-dogs  
+3. https://www.kaggle.com/code/chetankv/cnn-cats-vs-dogs-classification  
+6. https://www.kaggle.com/code/uysimty/keras-cnn-dog-or-cat-classification
